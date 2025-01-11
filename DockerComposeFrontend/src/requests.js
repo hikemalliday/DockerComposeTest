@@ -1,7 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const endpoint = "http://localhost:8000/main/";
+const prod = true;
+let endpoint;
+
+if (prod) {
+  endpoint = "http://45.55.129.24:8000/main/";
+} else {
+  endpoint = "http://localhost:8000/main/";
+}
 
 export function useRequest() {
   const [data, setData] = useState({});
